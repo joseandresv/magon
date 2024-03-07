@@ -1,0 +1,6 @@
+gnews
+selenium
+newspaper3k
+polars
+webdriver-manager
+readability
