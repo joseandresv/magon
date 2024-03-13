@@ -1,6 +1,9 @@
 # magon
 Repositorio de ChatBot Magon
 
+## Instalar Requirements
+`pip install -r requirements_demo.txt`
+
 ## ChatGPT token
 PAra que funcione deben poner el token de su API de ChatGPT en el archivo `.env`, un ejemplo de como debe verse ese archivo esta en `.env_example`. Crea uno que se llame `.env` en tu local, este archivo esta protegido por el `.gitignore` para no subirse a github, sin embargo se cuidadose.
 
@@ -21,3 +24,5 @@ Primero se debe correr el `scrapping` para bajar las noticias del tema, despues 
 - [ ] Parsear la respuesta del chatbot para que las citas sean mejores
 - [ ] Definir formato a guardar las noticias 
 - [ ] Montar base de MongoDB
+- [ ] Crear Docker-dev
+- [ ] Crear Docker-deployment
