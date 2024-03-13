@@ -11,7 +11,6 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 import re
 
 
-
 def get_page_content(url, max_retries=3, delay=5):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36'
@@ -104,6 +103,7 @@ def extract_article_content_selenium(url,proxy=None):
 
     return article_content
 
+
 def extract_article_content_selenium_js(url):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')  # Run Chrome in headless mode
@@ -169,18 +169,17 @@ def extract_article_content_selenium_js(url):
 
     return article_content
 
+
 def scrape_news_article(article):
-    
     url = article['url']
     page_content = get_page_content(url)
+    article['content'] = None
     
-    if page_content:
+    if page_content is not None:
         # Try extracting content using the existing function first
         article_content = extract_article_content_selenium(url)
         # If the content is empty, try the new function for JavaScript-rendered content
         if not article_content.strip():
             article_content = extract_article_content_selenium_js(url)
         article['content'] = article_content
-    else:
-        article['content'] = None
     return article
