@@ -1,0 +1,7 @@
+gnews
+selenium
+newspaper3k
+webdriver-manager
+readability
+paper-qa
+openai
