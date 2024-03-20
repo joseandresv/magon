@@ -5,3 +5,5 @@ webdriver-manager
 readability
 paper-qa
 openai
+pymongo
+python-dotenv
